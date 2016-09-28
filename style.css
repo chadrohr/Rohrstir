@@ -1,0 +1,32 @@
+body{
+background: url(http://wallpapercave.com/wp/trzPaPz.jpg);
+background-size: cover;
+background-attachment: fixed;
+}
+.form-inline{
+    padding: 20px;
+    text-align: center; 
+}
+.card{
+    color:#cdeaf3;
+    width: 1000px;
+    border-radius:10px;
+    margin: 15px;
+    background:#9fa9a0;
+    border: 3px solid gray;
+}
+.card-img-left{
+    height: 70px;
+    width: 70px;
+    float: left;  
+    border-radius: 10%; 
+}
+.card-block{
+  padding: 5px;
+}
+
+.sound-box{
+  opacity: .4;
+  margin-top: 2%;
+
+}
