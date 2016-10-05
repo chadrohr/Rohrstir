@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Rohrstir</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-    <script src="itunes-service.js"></script>
-    <script src="app.js"></script>
+
 </head>
 
 <body>
@@ -17,7 +15,7 @@
     <form class="form-inline col-xs-12">
         <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
         <div class="form-group">
-            <input type="text" class="form-control" id="artist" placeholder="Artist Name" onkeydown="if (event.keyCode == 13) { getMusic(); return false; }"/>
+            <input type="text" class="form-control" id="artist" placeholder="Artist Name" onkeydown="if (event.keyCode == 13) { getMusic(); return false; }">
             <button type="button" class="btn btn-primary" id="get-music-button" onclick="getMusic()">Get Music</button>
         </div>
     </form>
@@ -25,12 +23,14 @@
         <div class="row">
             <div class="col-xs-12 col-md-12" id="songs">
 
-                
+
 
             </div>
         </div>
     </div>
-
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="my-itunes-service.js"></script>
+    <script src="my-itunes-controler.js"></script>
 </body>
 
 </html>
