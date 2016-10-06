@@ -1,5 +1,4 @@
 function MyTunesService() {
-  debugger
   var myPlayList = loadTracks()
   var masterPlayList = []
   // pulls from itunes add builds PlayList sending to myTacks
@@ -12,7 +11,6 @@ function MyTunesService() {
   }
   // Adds to my personal Playlist --myTracks
   this.addTrack = function (id) {
-    debugger
     // if(myPlayList.length == 0){
     //   myPlayList.push(song);
     // }
@@ -27,7 +25,6 @@ function MyTunesService() {
          }
       }
         myPlayList.push(song);
-        console.log(myPlayList)
     //    masterPlayList.splice(i, 1);
     }
     
