@@ -24,7 +24,7 @@ function drawSongs(songList) {
                         <div class="col-sm-1">
                             <img class="card-img-left" src="${song.albumArt}" alt="Card image cap">
                         </div>
-                        <div class="name-artist col-sm-4">
+                        <div class="name-artist col-sm-3">
                             <h5 class=" card-title ">${song.title}</h5>
                             <p class="card-text ">${song.artist}</p>
                         </div>
@@ -33,7 +33,7 @@ function drawSongs(songList) {
                             <p class="card-text "><a href="_blank " class="card-link ">Buy Now</a> $${song.price}</p>
                         </div>
                         <div class="sound-box col-sm-4 ">
-                            <audio controls style="width=250px" ; " src="${song.preview} ">
+                            <audio controls style="width=275px" ; " src="${song.preview} ">
                                 <a href="${song.preview} " class="card-link ">Card link</a>
                             </audio>
                             <button class="btn btn-success btn-sm" type="button" id="${song.id}" onclick="myTunes.addTrack(${song.id}); getMyMusic()">Add to Playlist</button>
@@ -54,7 +54,7 @@ function drawMySongs(myList){
                         <div class="col-sm-1">
                             <img class="card-img-left" src="${song.albumArt}" alt="Card image cap">
                         </div>
-                        <div class="name-artist col-sm-4">
+                        <div class="name-artist col-sm-3">
                             <h5 class=" card-title ">${song.title}</h5>
                             <p class="card-text ">${song.artist}</p>
                         </div>
@@ -63,10 +63,10 @@ function drawMySongs(myList){
                             <p class="card-text "><a href="_blank " class="card-link ">Buy Now</a> $${song.price}</p>
                         </div>
                         <div class="sound-box col-sm-4 ">
-                            <audio controls style="width=250px" ; " src="${song.preview} ">
+                            <audio controls style="width=275px" ; " src="${song.preview} ">
                                 <a href="${song.preview} " class="card-link ">Card link</a>
                             </audio>
-                            <button class="btn btn-danger btn-sm" type="button" id="${song.id}" onclick="myTunes.removeTrack(${song.id}); getMyMusic()">Remove from Playlist</button>
+                            <button class="btn btn-info btn-sm" type="button" id="${song.id}" onclick="myTunes.removeTrack(${song.id}); getMyMusic()">Remove from Playlist</button>
                             <button class="btn btn-info btn-sm" type="button" id="${song.id}" onclick="myTunes.promoteTrack(${song.id}); getMyMusic()">Promote</button>
                             <button class="btn btn-info btn-sm" type="button" id="${song.id}" onclick="myTunes.demoteTrack(${song.id}); getMyMusic()">Demote</button>
                         </div>

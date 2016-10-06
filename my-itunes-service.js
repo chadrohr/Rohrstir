@@ -1,6 +1,5 @@
 function MyTunesService() {
-  var myTracks = loadTracks();
-  var myPlayList = []
+  var myPlayList = loadTracks()
   var masterPlayList = []
   // pulls from itunes add builds PlayList sending to myTacks
   this.putTracks = function (arr) {
@@ -12,10 +11,11 @@ function MyTunesService() {
   }
   // Adds to my personal Playlist --myTracks
   this.addTrack = function (id) {
+    debugger
     // if(myPlayList.length == 0){
     //   myPlayList.push(song);
     // }
-    myPlayList = loadTracks()
+
     for (var i = 0; i < masterPlayList.length; i++) {
       var song = masterPlayList[i];
       
@@ -25,17 +25,18 @@ function MyTunesService() {
            return
          }
       }
-        myPlayList.push(song);/// Do I build full song here
+        myPlayList.push(song);
+        console.log(myPlayList)
     //    masterPlayList.splice(i, 1);
     }
-    saveTracks(myPlayList)
-    return
+    
   }
+    saveTracks(myPlayList)
   }
 
   // Removes track from my personal Playlist --myTracks
   this.removeTrack = function (id) {
-    myPlayList = loadTracks()
+   
     for (var i = 0; i < myPlayList.length; i++) {
       var song = myPlayList[i];
       if (song.id == id) {
@@ -76,16 +77,19 @@ function MyTunesService() {
   this.clearData = function () {
     localStorage.removeItem('myPlayList')
   }
-  function saveTracks(myTracks) {
-    localStorage.setItem('myPlayList', JSON.stringify(myTracks))
+  function saveTracks() {
+    localStorage.setItem('myPlayList', JSON.stringify(myPlayList))
   }
    
 
   function loadTracks() {
-    myPlayList = localStorage.getItem('myPlayList')
-    if (myPlayList) {
-      myPlayList = JSON.parse(myPlayList)
+    var data = localStorage.getItem('myPlayList')
+    if (data) {
+      return JSON.parse(data)
+    }else{
+
+    return  []
     }
-    return myPlayList
   }
+
 }
