@@ -11,6 +11,11 @@ function getMyMusic(){
    var myPlayList = myTunes.getTracks()
    drawMySongs(myPlayList);
 }
+function getClear(){
+   debugger
+myTunes.clearData()
+   //clearPlayList(myPlatList);
+}
 
 function drawSongs(songList) {
     myTunes.putTracks(songList)
@@ -18,6 +23,7 @@ function drawSongs(songList) {
     var songElement = document.getElementById('songs')
     for (var i = 0; i < songList.length; i++) {
         var song = songList[i]
+       // console.log(song.purchaseUrl)
         template +=
             ` <div class="card">
                     <div class="card-block">
@@ -30,7 +36,7 @@ function drawSongs(songList) {
                         </div>
                         <div class="col-sm-3 ">
                             <p class="card-text ">${song.collection}</p>
-                            <p class="card-text "><a href="_blank " class="card-link ">Buy Now</a> $${song.price}</p>
+                            <p class="card-text "><a href='${song.purchaseUrl}' class="card-link " target="_blank">Buy Now</a> $${song.price}</p>
                         </div>
                         <div class="sound-box col-sm-4 ">
                             <audio controls style="width=275px" ; " src="${song.preview} ">
@@ -60,7 +66,7 @@ function drawMySongs(myList){
                         </div>
                         <div class="col-sm-3 ">
                             <p class="card-text ">${song.collection}</p>
-                            <p class="card-text "><a href="_blank " class="card-link ">Buy Now</a> $${song.price}</p>
+                            <p class="card-text "><a href="${song.purchaseUrl}" class="card-link " target="_blank">Buy Now</a> $${song.price}</p>
                         </div>
                         <div class="sound-box col-sm-4 ">
                             <audio controls style="width=275px" ; " src="${song.preview} ">

@@ -9,15 +9,17 @@
         $('#get-music-button').text('LOADING....');
 
         return $.getJSON(apiUrl).then(function (response) {
+         console.log(response.results)
           var songList = response.results.map(function (song) {
             return {
               title: song.trackName,
               albumArt: song.artworkUrl60,
               artist: song.artistName,
               collection: song.collectionName,
-              price: song.collectionPrice,
+              price: song.trackPrice,
               preview: song.previewUrl,
-              id: song.trackId
+              id: song.trackId,
+              purchaseUrl: song.trackViewUrl
             };
           })
           $('#get-music-button').text('GET MUSIC');

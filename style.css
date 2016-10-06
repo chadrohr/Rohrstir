@@ -3,9 +3,9 @@ background: url(http://wallscreenart.com/wp-content/uploads/2016/07/new-abstract
 background-size: cover;
 background-attachment: fixed;
 }
-/*.btn{
-    background: transparent;*/
-/*}*/
+.btn{
+    background: transparent;
+}
 .form-inline{
     padding: 20px;
     text-align: center; 

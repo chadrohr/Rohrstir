@@ -13,7 +13,8 @@
         <div class="form-group">
             <input type="text" class="form-control" id="artist" placeholder="Artist Name" onkeydown="if (event.keyCode == 13) { getMusic(); return false; }">
             <button type="button" class="btn btn-primary" id="get-music-button" onclick="getMusic()">Get Music</button>
-            <button type="button" class="btn btn-info" id="get-my-playlist" onclick="getMyMusic()">Refresh Playlist</button>
+            <button type="button" class="btn btn-primary" id="get-my-playlist" onclick="getMyMusic()">Refresh Playlist</button>
+            <button type="button" class="btn btn-primary" id="clear-my-playlist" onclick="getClear()">Clear Playlist</button>
         </div>
     </form>
 <div class="container">
