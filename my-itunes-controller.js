@@ -7,6 +7,10 @@ function getMusic() {
     var artist = document.getElementById('artist').value;
     itunes.getMusicByArtist(artist).then(drawSongs);
 }
+function getMyMusic(){
+   var myPlayList = myTunes.getTracks()
+   drawMySongs(myPlayList);
+}
 
 function drawSongs(songList) {
     myTunes.putTracks(songList)
@@ -32,7 +36,7 @@ function drawSongs(songList) {
                             <audio controls style="width=250px" ; " src="${song.preview} ">
                                 <a href="${song.preview} " class="card-link ">Card link</a>
                             </audio>
-                            <button class="btn btn-success btn-sm" type="button" id="${song.id}" onclick="myTunes.addTrack(${song.id})">Add to Playlist</button>
+                            <button class="btn btn-success btn-sm" type="button" id="${song.id}" onclick="myTunes.addTrack(${song.id}); getMyMusic()">Add to Playlist</button>
                         </div>
                     </div>
                 </div>`
@@ -42,8 +46,8 @@ function drawSongs(songList) {
 function drawMySongs(myList){
     var template = ""
     var songElement = document.getElementById('my-songs')
-    for (var i = 0; i < songList.length; i++) {
-        var song = songList[i]
+    for (var i = 0; i < myList.length; i++) {
+        var song = myList[i]
         template +=
             ` <div class="card">
                     <div class="card-block">
@@ -62,9 +66,9 @@ function drawMySongs(myList){
                             <audio controls style="width=250px" ; " src="${song.preview} ">
                                 <a href="${song.preview} " class="card-link ">Card link</a>
                             </audio>
-                            <button class="btn btn-danger btn-sm" type="button" id="${song.id}" onclick="myTunes.removeTrack(${song.id})">Remove from Playlist</button>
-                            <button class="btn btn-info btn-sm" type="submit">Promote in List</button>
-                            <button class="btn btn-info btn-sm" type="submit">Demote in List</button>
+                            <button class="btn btn-danger btn-sm" type="button" id="${song.id}" onclick="myTunes.removeTrack(${song.id}); getMyMusic()">Remove from Playlist</button>
+                            <button class="btn btn-info btn-sm" type="button" id="${song.id}" onclick="myTunes.promoteTrack(${song.id}); getMyMusic()">Promote</button>
+                            <button class="btn btn-info btn-sm" type="button" id="${song.id}" onclick="myTunes.demoteTrack(${song.id}); getMyMusic()">Demote</button>
                         </div>
                     </div>
                 </div>`
@@ -79,7 +83,6 @@ window.addEventListener("play", function (evt) {
     }
     window.$_currentlyPlaying = evt.target;
 }, true);
-    drawSongs(myTunes.masterPlayList)
-    drawMySongs(myTunes.myPlayList)
+    
 //}
 
