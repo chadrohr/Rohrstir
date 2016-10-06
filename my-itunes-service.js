@@ -85,7 +85,7 @@ function MyTunesService() {
 
   function loadTracks() {
     var data = localStorage.getItem('myPlayList')
-    if (data) {
+    if (!null && data) {
       return JSON.parse(data)
     }else{
 
