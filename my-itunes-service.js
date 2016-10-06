@@ -1,4 +1,5 @@
 function MyTunesService() {
+  debugger
   var myPlayList = loadTracks()
   var masterPlayList = []
   // pulls from itunes add builds PlayList sending to myTacks
