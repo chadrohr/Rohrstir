@@ -4,10 +4,12 @@ var myTunes = new MyTunesService()
 function getMusic() {
     var artist = document.getElementById('artist').value;
     itunes.getMusicByArtist(artist).then(drawSongs);
+    $('#artist').focus()
 }
 function getMyMusic(){
    var myPlayList = myTunes.getTracks()
    drawMySongs(myPlayList);
+   $('#artist').focus()
 }
 // function getClear(){
 //    debugger
