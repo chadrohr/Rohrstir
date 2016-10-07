@@ -1,8 +1,6 @@
 //function MytunesController() {
-
 var myTunes = new MyTunesService()
 
-//Do Not Modify the getMusic function
 function getMusic() {
     var artist = document.getElementById('artist').value;
     itunes.getMusicByArtist(artist).then(drawSongs);
@@ -11,11 +9,11 @@ function getMyMusic(){
    var myPlayList = myTunes.getTracks()
    drawMySongs(myPlayList);
 }
-function getClear(){
-   debugger
-myTunes.clearData()
+// function getClear(){
+//    debugger
+// myTunes.clearData()
    //clearPlayList(myPlatList);
-}
+//}
 
 function drawSongs(songList) {
     myTunes.putTracks(songList)
